@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Kitap 1</title>
+</head>
+<body>
+    <div class="seker-portakali">
+        <br>
+        <img src="{{kitap_resmi}}" alt="">
+        <p>Kitap ismi : {{kitap_adi}}</p>
+        <p>Kitap yazarı : {{kitap_yazari}} </p>
+        <p>Yayın evi : {{yayin_evi}} </p>
+        <p>Sayfa sayısı : {{sayfa_sayisi}} </p>
+        <p>Fiyat : {{fiyat}} TL</p>
+
+        <style>
+            img {
+                height: 200px;
+            }
+            .like-button {
+                color: rgb(255, 0, 85);
+                scale: 1.7;
+                position: absolute;
+                margin-top: 30px;
+                margin-left: 940px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .like-button:hover {
+                scale: 1.9;
+            }
+            .seker-portakali{
+                text-align: center;
+                margin-top: 100px;
+            }
+        </style>
+    </div>
+    <div class="like">
+        <div id="like-button" title="Beğen" onclick="toggleLike()">
+            <i id="heart-icon" class="far fa-heart like-button"></i>
+        </div>
+    </div>
+
+    <script>
+        function toggleLike() {
+            var heartIcon = document.getElementById('heart-icon');
+        
+            if (heartIcon.classList.contains('fa-solid')) {
+                // Dolu kalp ikonunu tıkladıysanız, boş kalp ikonu yapın
+                heartIcon.classList.remove('fa-solid');
+                heartIcon.classList.add('fa-regular'); // FontAwesome'da boş kalp ikonunun sınıfı
+            } else {
+                // Boş kalp ikonunu tıkladıysanız, dolu kalp ikonu yapın
+                heartIcon.classList.remove('fa-regular');
+                heartIcon.classList.add('fa-solid');
+            }
+        }
+    </script>
+</body>
+</html>
